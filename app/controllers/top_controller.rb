@@ -1,6 +1,16 @@
 class TopController < ApplicationController
 	require 'open-uri'
 	require 'nokogiri'
+	require 'robotex'
+
+	robotex = Robotex.new
+	p robotex.allowed?("http://www.yahoo.co.jp/")
+
+	get '/index' do
+	url ='http://www.yahoo.co.jp/'
+
+	user_agent = 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.63 Safari/537.36'
+
 
 	def index
 		url = 'http://matome.naver.jp/tech'
